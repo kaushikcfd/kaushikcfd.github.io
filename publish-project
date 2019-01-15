@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# publish only the modified files
+emacs --batch --load publish-project.el --eval '(org-publish "personal-webpage" t)'

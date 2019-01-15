@@ -1,0 +1,44 @@
+#+TITLE: Kaushik Kulkarni
+
+I am a second year PhD student at University of Illinois at
+Urbana-Champaign, where I am a part of the
+[[http://scicomp.cs.illinois.edu/][Scientific Computing group]] in the
+Computer Science Department. I am advised by
+[[https://andreask.cs.illinois.edu/][Prof. Andreas Kloeckner]] with whom
+I am working in the area of /Transformation based Code Generation/ in
+applications motivated by Finite element methods.
+
+Before starting out as a PhD Student, I was an undergraduate student at
+Indian Institute of Technology at Bombay, where I worked in topics
+related to Computational Fluid Dynamics.
+
+--------------
+
+* News
+   :PROPERTIES:
+   :CUSTOM_ID: news
+   :END:
+
++ *August, 2017:* Started as a PhD student at
+  [[https://en.wikipedia.org/wiki/University_of_Illinois_at_Urbana%E2%80%93Champaign][University
+  of Illinois at Urbana-Champaign]].
++ *May, 2017:* Graduated as a Mechanical Engineer from
+  [[https://en.wikipedia.org/wiki/Indian_Institute_of_Technology_Bombay][Indian
+  Institute of Technology at Bombay]]
+
+--------------
+
+To know more about me please visit --
+
++ [[file:extras/resume.pdf][My CV]]
++ [[file:research.org][My research]]
++ [[file:publications.html][Publications]]
++ [[https://github.com/kaushikcfd/][My GitHub profile]]
++ [[file:blog.org][Random musings]]  
+
+--------------
+
+*Contact:* [[mailto:kgk2@illinois.edu][kgk2@illinois.edu]]
+
+
+--------------

@@ -1,0 +1,22 @@
+#+TITLE: C-Style Billion laughs
+
+For context see [[https://en.wikipedia.org/wiki/Billion_laughs_attack][Billion laughs on Wikipedia.]]
+
+#+BEGIN_SRC c
+#include<stdio.h>
+
+#define lol printf("LOL\n");
+#define lol1 lol lol lol lol lol lol lol lol lol lol
+#define lol2 lol1 lol1 lol1 lol1 lol1 lol1 lol1 lol1 lol1 lol1
+#define lol3 lol2 lol2 lol2 lol2 lol2 lol2 lol2 lol2 lol2 lol2
+#define lol4 lol3 lol3 lol3 lol3 lol3 lol3 lol3 lol3 lol3 lol3
+#define lol5 lol4 lol4 lol4 lol4 lol4 lol4 lol4 lol4 lol4 lol4
+#define lol6 lol5 lol5 lol5 lol5 lol5 lol5 lol5 lol5 lol5 lol5
+#define lol7 lol6 lol6 lol6 lol6 lol6 lol6 lol6 lol6 lol6 lol6
+#define lol8 lol7 lol7 lol7 lol7 lol7 lol7 lol7 lol7 lol7 lol7
+#define lol9 lol8 lol8 lol8 lol8 lol8 lol8 lol8 lol8 lol8 lol8
+
+int main() {lol9}
+#+END_SRC
+
+/Warning:/ Do not paste this is an linting-enabled editor.
