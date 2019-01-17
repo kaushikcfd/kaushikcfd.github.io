@@ -4,8 +4,7 @@
 (require 'ox-publish)
 
 (setq org-html-postamble-format 
-       '(("en" "<p class=\"date\">Last Updated %T.</p>
-                <p class=\"creator\">Created using %c</p>")))
+       '(("en" "<p class=\"creator\">Last Updated %T.</br>Created using %c</p>")))
 
 (setq org-publish-project-alist
     '(
@@ -19,7 +18,6 @@
        :section-numbers nil
        :with-toc nil
        :html-extension "html"
-       :html-head-include-scripts nil
        :html-html5-fancy t
        :html-doctype "html5"
        :html-postamble t

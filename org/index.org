@@ -1,4 +1,5 @@
 #+TITLE: Kaushik Kulkarni
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
 I am a second year PhD student at University of Illinois at
 Urbana-Champaign, where I am a part of the

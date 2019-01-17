@@ -1,6 +1,8 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css"/>
 #+TITLE: Publications
 
-1. A. Bhati, R. Sawanni, *K. Kulkarni*, R. Bhardwaj, "Role of skin
-   friction drag during flow-induced reconfiguration of a flexible thin
-   plate," /Journal of Fluids and Structures/, vol. 77, pp.134--150,
-   2018.
+1. A. Bhati, R. Sawanni, *K. Kulkarni*, R. Bhardwaj, "Role of skin friction drag
+   during flow-induced reconfiguration of a flexible thin plate," /Journal of
+   Fluids and Structures/, vol. 77, pp.134--150, 2018.
+
+-----

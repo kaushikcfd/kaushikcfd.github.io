@@ -1,3 +1,4 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css"/>
 ** Transformation based Code generation for Finite Element Methods
   [Aug, 2018 - Present]
   /Advised by Prof. Andreas Klöckner, UIUC/
