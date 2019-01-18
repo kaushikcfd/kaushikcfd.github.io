@@ -1,4 +1,5 @@
 #+TITLE: C-Style Billion laughs
+#+SETUPFILE: blog_entry_setup.org
 
 For context see [[https://en.wikipedia.org/wiki/Billion_laughs_attack][Billion laughs on Wikipedia.]]
 
@@ -20,3 +21,5 @@ int main() {lol9}
 #+END_SRC
 
 /Warning:/ Do not paste this is an linting-enabled editor.
+
+-----

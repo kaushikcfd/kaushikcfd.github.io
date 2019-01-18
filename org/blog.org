@@ -1,3 +1,6 @@
 #+TITLE: Archive of all the Blog posts
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css"/> 
 
 + [[file:blog_entries/c_style_billion_attack.org][C-Styled Billion Laughs attack ]][ /January, 2019/ ]
+
+-----
