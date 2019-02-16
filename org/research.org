@@ -1,11 +1,16 @@
+#+TITLE: Research
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css"/>
-** Transformation based Code generation for Finite Element Methods
-  [Aug, 2018 - Present]
+** Finite Element Assembly on GPUs
+  [June, 2018 - Present]
   /Advised by Prof. Andreas Klöckner, UIUC/
 
-  We are extending the loo.py package by enabling transformations that
-  would optimize the Finite Element kernels of the Firedrake
-  Project(Imperial College), to boost their performance on GPUs.
+/Describe the problem and state what you did/
+
+** Abstraction for High Performance Code Generation
+  [Aug, 2017 - Present]
+  /Advised by Prof. Andreas Klöckner, UIUC/
+
+/Describe the problem and state what you did/
 
 ** Solving Eikonal Equations on Unstructured Grids
   [Dec, 2016 - June 2017]

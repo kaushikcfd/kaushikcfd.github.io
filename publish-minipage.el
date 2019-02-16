@@ -24,6 +24,13 @@
        :recursive t)
 
       ;; CSS files to be copied to the html folder.
+      ("html"
+       :base-directory "./org"
+       :base-extension "html"
+       :publishing-directory "./html"
+       :publishing-function org-publish-attachment)
+
+      ;; CSS files to be copied to the html folder.
       ("css"
        :base-directory "./org/css"
        :base-extension "css"
@@ -38,6 +45,6 @@
        :publishing-function org-publish-attachment)
 
       ;; Publish all of the components in order.
-      ("personal-webpage" :components ("org" "css" "extras"))
+      ("personal-webpage" :components ("org" "html" "css" "extras"))
     )
 )

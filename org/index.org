@@ -5,12 +5,12 @@ I am a second year PhD student at University of Illinois at
 Urbana-Champaign, where I am a part of the
 [[http://scicomp.cs.illinois.edu/][Scientific Computing group]] in the
 Computer Science Department. I am advised by
-[[https://andreask.cs.illinois.edu/][Prof. Andreas Kloeckner]] with whom
+[[https://andreask.cs.illinois.edu/][Prof. Andreas Klöckner]] with whom
 I am working in the area of /Transformation based Code Generation/ in
 applications motivated by Finite element methods.
 
 Before starting out as a PhD Student, I was an undergraduate student at
-Indian Institute of Technology at Bombay, where I worked in topics
+Indian Institute of Technology at Bombay, where I worked on topics
 related to Computational Fluid Dynamics.
 
 --------------

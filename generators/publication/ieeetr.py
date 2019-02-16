@@ -3,9 +3,6 @@ import sys
 import re
 from mako.template import Template
 
-_MY_FIRST_NAME = 'Kaushik'
-_MY_LAST_NAME = 'Kulkarni'
-
 filename = sys.argv[1]
 
 with open(filename) as bibtex_file:
@@ -20,16 +17,22 @@ for i, entry in enumerate(bib_database.entries):
     authors = [x.strip() for x in entry['author'].split("and")]
     author_str = ""
     for author in authors:
+        strongify = False
+        if author[:8] == r'\textbf{':
+            #FIXME: use regex here
+            author = author[8:-1]
+            strongify = True
         last_name, first_name = [x.strip() for x in author.split(", ")]
-        if last_name == _MY_LAST_NAME and first_name == _MY_FIRST_NAME:
-            # emphasize my name
-            author_str += "**"+first_name[0]+". "+last_name+"**, "
+        if strongify:
+            author_str += "<strong>{0}. {1}</strong>, ".format(
+                    first_name[0], last_name)
         else:
-            author_str += first_name[0]+". "+last_name+", "
+            author_str += "{0}. {1}, ".format(first_name[0], last_name)
+
     author_str = author_str[:-2]
 
-    ieee_str += ('<ref> {authors}, "{title}," _{journal}_, vol. {vol}, '
-                 'pp.{pages}, {year}.</ref>\n').format(
+    ieee_str += ('<ref> {authors}, &ldquo;{title},&rdquo; <em>{journal}</em>, '
+                 'vol. {vol}, pp.{pages}, {year}.</ref>\n').format(
                         authors=author_str,
                         title=entry['title'],
                         journal=entry['journal'],
@@ -38,17 +41,28 @@ for i, entry in enumerate(bib_database.entries):
                         year=entry['year'])
 
 final_str = (r"""
-        ---
-        title: Publications
-        ...
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        </head>
+        <body>
+
+        <h1>Publications</h1>
+
 
         ${ieee_style_publications}
 
-        ---
-        <div id="footer">
-        _Maintained with the help of [bibtexparser](
-        https://github.com/sciunto-org/python-bibtexparser)._
+
+        <hr >
+        <div id="postamble" class="status">
+        <p class="creator">Last Updated 2019-01-23 Wed 17:54.</br>Maintained
+        with the help of
+        <a href="http://github.com/sciunto-org/python-bibtexparser/">bibtexparser</a>
+        </p>
         </div>
+        </body>
+        </html>
 
         """)
 
