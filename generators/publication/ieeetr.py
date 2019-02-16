@@ -1,6 +1,7 @@
 import bibtexparser
 import sys
 import re
+import datetime
 from mako.template import Template
 
 filename = sys.argv[1]
@@ -56,7 +57,7 @@ final_str = (r"""
 
         <hr >
         <div id="postamble" class="status">
-        <p class="creator">Last Updated 2019-01-23 Wed 17:54.</br>Maintained
+        <p class="creator">Last Updated ${year}-${month}-${date}.</br>Maintained
         with the help of
         <a href="http://github.com/sciunto-org/python-bibtexparser/">bibtexparser</a>
         </p>
@@ -69,4 +70,7 @@ final_str = (r"""
 final_str = re.sub("\\n        ", "\n", final_str)
 
 print(Template(final_str).render(
-    ieee_style_publications=ieee_str))
+    ieee_style_publications=ieee_str,
+    date=datetime.date.today().strftime("%d"),
+    month=datetime.date.today().strftime("%m"),
+    year=datetime.date.today().strftime("%Y")))
