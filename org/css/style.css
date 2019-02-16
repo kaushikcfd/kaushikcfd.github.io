@@ -1,3 +1,8 @@
+/*
+ * Part of the CSS is taken from https://github.com/gongzhitaao/orgcss
+ * License for it: https://raw.githubusercontent.com/gongzhitaao/orgcss/master/LICENSE.md
+ */
+
 html{font-family:CMU Serif Roman;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
 
 ref{display: block;position: relative;
@@ -7,6 +12,7 @@ ref{display: block;position: relative;
   break-inside: avoid;
   text-align: left;
 }
+
 ref:before {
   position: absolute;
   display: inline-block;
