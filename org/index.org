@@ -15,20 +15,6 @@ related to Computational Fluid Dynamics.
 
 --------------
 
-* News
-   :PROPERTIES:
-   :CUSTOM_ID: news
-   :END:
-
-+ *August, 2017:* Started as a PhD student at
-  [[https://en.wikipedia.org/wiki/University_of_Illinois_at_Urbana%E2%80%93Champaign][University
-  of Illinois at Urbana-Champaign]].
-+ *May, 2017:* Graduated as a Mechanical Engineer from
-  [[https://en.wikipedia.org/wiki/Indian_Institute_of_Technology_Bombay][Indian
-  Institute of Technology at Bombay]]
-
---------------
-
 To know more about me please visit --
 
 + [[file:extras/resume.pdf][My CV]]
@@ -40,6 +26,5 @@ To know more about me please visit --
 --------------
 
 *Contact:* [[mailto:kgk2@illinois.edu][kgk2@illinois.edu]]
-
 
 --------------

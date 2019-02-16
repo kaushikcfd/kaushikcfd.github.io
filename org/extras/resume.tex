@@ -1,0 +1,171 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage{geometry}
+\usepackage[bookmarksnumbered,hidelinks]{hyperref}
+\usepackage{soul}
+\usepackage[T1]{fontenc}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage[style=ieee]{biblatex}
+\usepackage{enumitem}
+\pagestyle{empty}
+\newcommand{\updatenote}[1][\today]{\par\vfill{\scriptsize \textit{Last updated on #1}}}
+\addbibresource{publications.bib}
+
+% -------------------------------------------------------------
+% TODO:
+% [ ] Maintain a org-file instead of tex
+% [x] Proof read the research paragraphs
+% [x] Adding code links to the description
+% [x] Change the first section.
+% [x] Change the spacing of the empty line in tables
+% [x] Reduce the spacing between the advisor and title and ~~increase between the description on advisor.~~
+% [x] Change the way you write about research.
+% [x] Remove enumerates.
+% [x] Add the current research.
+% [x] Complete the Morgan Stanley discussion section
+% ---------------------------------------------------------------
+
+
+
+\begin{document}
+
+% {{{ Title
+
+\begin{center}
+    \LARGE
+    \textsc{\textbf{
+    Kaushik G Kulkarni}}\\
+    \vspace{1ex}
+    \normalsize
+    \begin{tabular}{p{0.1\textwidth}p{8ex} p{0.4\textwidth}}
+        & Address:    & 201N Goodwin Ave.,\\
+        &             & Urbana, IL 61801,\\
+        &             & USA\\
+        & Email:      &\href{mailto:kgk2@illinois.edu}{\texttt{kgk2@illinois.edu}}\\
+        & Web:        & \texttt{\small \url{https://kaushikcfd.github.io}} \\
+        & Phone:      &\texttt{(+1)-217-6488653}
+    \end{tabular}
+\end{center}
+
+% }}}
+
+% {{{ Education
+
+\section*{\Large\textsc{Education}}
+\vspace{-4ex}
+\rule{\textwidth}{0.1ex}\\
+\vspace{1ex}\\
+\begin{tabular}{p{0.25\textwidth} p{0.67\textwidth}}
+Aug '17 --  \textit{Present}  & Ph.D. student in Computer Science \\
+                              & \textit{University of Illinois at Urbana-Champaign, Urbana, IL} \\
+                              & \textit{Adviser: Prof. Andreas Kl\"{o}ckner} \\
+                              & \\
+Aug '13 -- May '17            & Bachelor of Technology in Mechanical Engineering \\
+                              & \textit{Indian Institute of Technology, Bombay} \\
+                              & \textit{Adviser: Prof. Shiva Gopalakrishnan}\\
+\end{tabular}
+
+% }}}
+
+% {{{ Work Experience
+
+\section*{\Large\textsc{Experience}}
+\vspace{-4ex}
+\rule{\textwidth}{0.1ex}\\
+\vspace{1ex}\\
+\begin{tabular}{p{0.25\textwidth} p{0.69\textwidth}}
+Dec '18 -- \textit{Present} &   Graduate Research Assistant \\
+                            &   \textit{\small Computer Science Dept., UIUC}\vspace{1ex}\\
+Aug '18 -- Dec '18          &   Teaching Assistant for Numerical Analysis\\
+                            &   \textit{\small Computer Science Dept., UIUC}\vspace{1ex}\\ 
+Dec '17 -- Aug '18          &   Graduate Research Assistant \\
+                            &   \textit{\small Computer Science Dept., UIUC}\vspace{1ex}\\
+Aug '17 -- Dec '17          &   Teaching Assistant for Numerical Methods\\
+                            &   \textit{\small Computer Science Dept., UIUC}\vspace{1ex}\\
+Jan '17 -- May '17          &   Teaching Assistant for Introduction to Numerical Analysis\\
+                            &   \textit{\small Mathematics Dept., IITB}\vspace{1ex}\\
+May '16 -- July '16         &   Software Engineering Intern\\
+                            &   \textit{\small Morgan Stanley Strats and Modelling, Mumbai}\\
+\end{tabular}
+
+% }}}
+
+% {{{ Publications
+
+\nocite{*}
+\printbibliography[title={\Large\textsc{Publications}\vspace*{-2ex}\\\rule{\textwidth}{0.1ex}}]
+
+% }}}
+
+% {{{ Awards and Achievements
+
+\section*{\Large\textsc{Awards and Achievements}}
+\vspace{-4ex}
+\rule{\textwidth}{0.1ex}
+\vspace{1ex}\\
+\begin{tabular}{p{0.25\textwidth} p{0.67\textwidth}}
+2019    &   Travel Award for SIAM Conference on Computational Science and Engineering(Spokane, WA) \vspace{1ex}\\
+2016    &   Undergraduate Research Award(URA01) by Indian Institute of Technology, Bombay \vspace{1ex}\\
+2013    &   All India Rank of \textit{341} (top 0.01\%) in the Joint Entrance Examination - Mains out of 1.5 million students \vspace{1ex} \\
+2013    &   All India Rank of \textit{419} (top 0.3\%)in the Joint Entrance Examination - Advanced out of 0.15 million students\vspace{1ex} \\
+2013    &   \textit{Kishore Vaigyanik Protsahan Yojana} Fellowship Award\vspace{1ex} \\
+2013    &   Certificate of Merit for being among the State Top 1\% in National Standard examination in Physics and Chemistry \\
+\end{tabular} 
+
+% }}}
+
+% {{{ Research
+
+\section*{\Large\textsc{Research}}
+\vspace{-4ex}
+\rule{\textwidth}{0.1ex}
+
+
+\subsection*{Finite Element Assembly on GPUs}
+\vspace{-1ex}
+\small \textit{Advised by Prof. Andreas Kl\"{o}ckner, UIUC}\\
+\textit{Describe the problem and state what you did.}
+Finite Element Assembly ...
+
+
+\subsection*{Abstractions for High Performance Computing}
+\vspace{-1ex}
+\small \textit{Advised by Prof. Andreas Kl\"{o}ckner, UIUC}\\
+\textit{Describe the problem and state what you did.}
+
+
+\subsection*{Solving Eikonal Equations on Unstructured Grids}
+\vspace{-1ex}
+\small \textit{Advised by Prof. S Baskar, IIT Bombay}\\
+Characteristic Fast Marching Method is widely used in solving the Eikonal
+equations, however previous work had been only formulated for structured
+grids. We developed a solver that extended the algorithm for
+unstructured grids as well. Used the solver to solve known problems in
+literature with skew grids so that the activity of the solution could be
+efficiently observed in the region of activity.\\
+Link: \texttt{https://github.com/kaushikcfd/eikonal-unstructured}
+
+
+\subsection*{Discontinuous Galerkin Framework for Hyperbolic PDEs}
+\vspace{-1ex}
+\small \textit{Advised by Prof. Shiva Gopalakrishnan, IIT Bombay}\\
+We developed a \texttt{C++} library for solving Hyperbolic Equations through
+Discontinuous Galerkin (``DG'') methods on structured grids.  Performed a series
+of convergence tests to verify that the framework satisfied $hp-$convergence.
+Eventually, used the framework to simulate problems in Fluid Dynamics like
+the dam-break problem using high order DG elements.\\
+Link: \texttt{https://github.com/kaushikcfd/Discontinuous-Galerkin}
+
+
+\subsection*{Flow Induced Reconfiguration of Aquatic Vegetation}
+\vspace{-1ex}
+\small \textit{Advised by Prof. Rajneesh Bharadwaj, IIT Bombay}\\
+Corrected the existing models for Fluid Structure Interaction for a Flexible plate by including the Skin friction coefficient in the computations. Implemented a "\textit{Predictor-Corrector}" based Finite Difference scheme for the computation of coefficient of drag on the plate.\\
+Link: \texttt{https://arxiv.org/abs/1712.00441}
+
+% }}}
+
+\updatenote
+\end{document}
+
+% vim:foldmethod=marker
