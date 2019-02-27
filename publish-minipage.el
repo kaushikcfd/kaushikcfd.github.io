@@ -4,7 +4,7 @@
 (require 'ox-publish)
 
 (setq org-html-postamble-format 
-       '(("en" "<p class=\"creator\">Last Updated %T.</br>Created using %c</p>")))
+       '(("en" "<p class=\"creator\">Last Updated %T.</p>")))
 
 (setq org-publish-project-alist
     '(

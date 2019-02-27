@@ -1,16 +1,16 @@
 #+TITLE: Research
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css"/>
 ** Finite Element Assembly on GPUs
-  [June, 2018 - Present]
-  /Advised by Prof. Andreas Klöckner, UIUC/
+  [June, 2018 - Present] /Advised by Prof. Andreas Klöckner/
 
-/Describe the problem and state what you did/
+  We are looking at optimization transformations in Finite Element Assembly for
+  the GPU backend.
 
 ** Abstraction for High Performance Code Generation
-  [Aug, 2017 - Present]
-  /Advised by Prof. Andreas Klöckner, UIUC/
+  [Aug, 2017 - Present] /Advised by Prof. Andreas Klöckner/
 
-/Describe the problem and state what you did/
+  For the integration of [[https://www.firedrakeproject.org/][Firedrake]] with [[https://documen.tician.de/loopy/][Loopy]] we extended Loopy by adding a
+  function interface to it, which supports the kernel calling mechanism within
 
 ** Solving Eikonal Equations on Unstructured Grids
   [Dec, 2016 - June 2017]

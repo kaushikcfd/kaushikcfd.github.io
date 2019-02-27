@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Research</title>
-<!-- 2019-02-27 Wed 00:48 -->
-<meta  charset="utf-8">
-<meta  name="generator" content="Org-mode">
-<meta  name="author" content="Kaushik Kulkarni">
+<title>Try <code>Firedrake</code> + CUDA</title>
+<!-- 2019-02-25 Mon 02:59 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Kaushik Kulkarni" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center; }
@@ -86,7 +88,6 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="css/style.css"/>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -136,92 +137,102 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Research</h1>
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Finite Element Assembly on GPUs</h2>
-<div class="outline-text-2" id="text-1">
-<p>
-[June, 2018 - Present] <i>Advised by Prof. Andreas Klöckner</i>
-</p>
+<h1 class="title">Try <code>Firedrake</code> + CUDA</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Install PETSc</a></li>
+<li><a href="#sec-2">2. Install Firedrake</a></li>
+<li><a href="#sec-3">3. Activate the <code>Firedrake</code> virtual-env</a></li>
+<li><a href="#sec-4">4. Install <code>PyCUDA</code></a></li>
+</ul>
+</div>
+</div>
 
-<p>
-We are looking at optimization transformations in Finite Element Assembly for
-the GPU backend.
-</p>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Install PETSc</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li><code>mkdir pack</code>
+</li>
+<li><code>cd pack</code>
+</li>
+<li><code>curl -O http://bitbucket.org/eigen/eigen/get/3.3.3.tar.bz2</code>
+</li>
+<li><code>git clone https://github.com/firedrakeproject/petsc</code>
+</li>
+<li><code>cd petsc</code>
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh">./configure --download-eigen=/path/to/pack/eigen-3.3.3.tgz
+--with-fortran-bindings=0 --download-chaco --download-metis --download-parmetis
+--download-scalapack --download-hypre --download-mumps --download-netcdf
+--download-hdf5 --download-pnetcdf --download-exodusii --download-fblaslapack
+--with-cuda=1 --with-cuda-dir=/usr/local/cuda --download-zlib --with-cudac=nvcc
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>set the environment variables <code>PETSC_DIR</code>, <code>PETSC_ARCH</code>
+</li>
+<li><code>make all</code>
+</li>
+</ul>
 </div>
 </div>
 
 <div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">Abstraction for High Performance Code Generation</h2>
+<h2 id="sec-2"><span class="section-number-2">2</span> Install Firedrake</h2>
 <div class="outline-text-2" id="text-2">
-<p>
-[Aug, 2017 - Present] <i>Advised by Prof. Andreas Klöckner</i>
-</p>
+<ul class="org-ul">
+<li><code>curl -O
+  https://raw.githubusercontent.com/firedrakeproject/firedrake/master/scripts/firedrake-install</code>
+</li>
+<li></li>
+</ul>
+<div class="org-src-container">
 
-<p>
-For the integration of <a href="https://www.firedrakeproject.org/">Firedrake</a> with <a href="https://documen.tician.de/loopy/">Loopy</a> we extended Loopy by adding a
-function interface to it, which supports the kernel calling mechanism within
-</p>
+<pre class="src src-sh">python3 firedrake-install --package-branch firedrake
+tsfc2loopy --package-branch tsfc tsfc2loopy
+--package-branch PyOP2 cuda --package-branch loopy
+firedrake
+</pre>
+</div>
 </div>
 </div>
 
 <div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3">Solving Eikonal Equations on Unstructured Grids</h2>
+<h2 id="sec-3"><span class="section-number-2">3</span> Activate the <code>Firedrake</code> virtual-env</h2>
 <div class="outline-text-2" id="text-3">
-<p>
-[Dec, 2016 - June 2017]
-<i>Advised by Prof. S Baskar, IIT Bombay</i>
-</p>
-
-<p>
-Characteristic Fast Marching Method is widely used in solving the
-Eikonal equations, however previous work had been only formulated for
-structured grids. We developed a solver that extended the algorithm
-for unstructured grids as well. Used the solver to solve known
-problems in literature with skew grids so that the activity of the
-solution could be efficiently observed in the region of activity
-</p>
+<ul class="org-ul">
+<li><code>source firedrake/bin/activate</code>
+</li>
+</ul>
 </div>
 </div>
 
 <div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4">Discontinuous Galerkin Framework for solving Hyperbolic PDEs</h2>
+<h2 id="sec-4"><span class="section-number-2">4</span> Install <code>PyCUDA</code></h2>
 <div class="outline-text-2" id="text-4">
-<p>
-[Dec,2015 - May 2017]
-<i>Advised by Prof. Shiva Gopalakrishnan, IIT Bombay</i>
-</p>
+<ul class="org-ul">
+<li><code>pip install pybind11</code>
+</li>
+<li><code>pip install pycuda</code>
+</li>
+</ul>
 
-<p>
-We developed a C++ library for solving Hyperbolic Equations through
-Discontinuous Galerkin ("DG") methods on structured grids. Performed a
-series of convergence tests to verify that the framework satisfied
-hp−convergence. Eventually, used the framework to simulate problems in
-Fluid Dynamics like the dam-break problem using high order DG
-elements.
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5">Flow Induced Reconfiguration of Aquatic Vegetation</h2>
-<div class="outline-text-2" id="text-5">
-<p>
-[Feb, 2015 - Aug, 2016]
-<i>Advised by Prof. Rajneesh Bharadwaj, IIT Bombay</i>
-Corrected the existing models for Fluid Structure Interaction for a
-Flexible plate by including the Skin friction coefficient in the
-computations. Implemented a "Predictor-Corrector" based Finite
-Difference scheme for the computation of coefficient of drag on the
-plate
-</p>
-
-<hr >
+<hr  />
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="creator">Last Updated 2019-02-27 Wed 00:48.</p>
+<p class="author">Author: Kaushik Kulkarni</p>
+<p class="date">Created: 2019-02-25 Mon 02:59</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>
