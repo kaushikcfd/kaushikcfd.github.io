@@ -5,11 +5,12 @@
 \usepackage[T1]{fontenc}
 \usepackage{lipsum}
 \usepackage{tabularx}
-\usepackage[style=ieee]{biblatex}
+\usepackage[style=ieee, defernumbers=true]{biblatex}
 \usepackage{enumitem}
 \pagestyle{empty}
 \newcommand{\updatenote}[1][\today]{\par\vfill{\scriptsize \textit{Last updated on #1}}}
-\addbibresource{publications.bib}
+\addbibresource{journal.bib} 
+\addbibresource{conference.bib}
 
 % -------------------------------------------------------------
 % TODO:
@@ -90,10 +91,13 @@ May '16 -- July '16         &   Software Engineering Intern\\
 
 % }}}
 
-% {{{ Publications
+% {{{ Publications and conferences
 
 \nocite{*}
-\printbibliography[title={\Large\textsc{Publications}\vspace*{-2ex}\\\rule{\textwidth}{0.1ex}}]
+\printbibliography[title={\Large\textsc{Publications}\vspace*{-2ex}\\\rule{\textwidth}{0.1ex}},
+type=article, resetnumbers=true]
+\printbibliography[title={\Large\textsc{Talks}\vspace*{-2ex}\\\rule{\textwidth}{0.1ex}},
+type=inproceedings, resetnumbers=true]
 
 % }}}
 
@@ -116,6 +120,8 @@ May '16 -- July '16         &   Software Engineering Intern\\
 
 % {{{ Research
 
+\pagebreak
+
 \section*{\Large\textsc{Research}}
 \vspace{-4ex}
 \rule{\textwidth}{0.1ex}
@@ -124,15 +130,17 @@ May '16 -- July '16         &   Software Engineering Intern\\
 \subsection*{Finite Element Assembly on GPUs}
 \vspace{-1ex}
 \small \textit{Advised by Prof. Andreas Kl\"{o}ckner, UIUC}\\
-\textit{Describe the problem and state what you did.}
-Finite Element Assembly ...
-
+We are looking at optimization transformations in Finite
+Element Assembly for the GPU backend.
 
 \subsection*{Abstractions for High Performance Computing}
 \vspace{-1ex}
 \small \textit{Advised by Prof. Andreas Kl\"{o}ckner, UIUC}\\
-\textit{Describe the problem and state what you did.}
-
+For the integration of
+\texttt{Firedrake}\footnote{\texttt{\url{https://www.firedrakeproject.org/}}
+} with \texttt{Loopy}\footnote{\texttt{\url{https://documen.tician.de/loopy/}}
+} we extended \texttt{Loopy} by adding a function interface to it, which
+supports the kernel calling mechanism within the package.
 
 \subsection*{Solving Eikonal Equations on Unstructured Grids}
 \vspace{-1ex}
