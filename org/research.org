@@ -10,7 +10,10 @@
   [Aug, 2017 - Present] /Advised by Prof. Andreas Klöckner/
 
   For the integration of [[https://www.firedrakeproject.org/][Firedrake]] with [[https://documen.tician.de/loopy/][Loopy]] we extended Loopy by adding a
-  function interface to it, which supports the kernel calling mechanism within
+  function interface to it, which supports the kernel calling mechanism. Related
+  to this topic, I have also put together a small package called [[https://kaushikcfd.github.io/numloopy][NumLoopy]] which
+  allows code generation through =NumPy=-like array syntax, while preserving the
+  notion of transformations.
 
 ** Solving Eikonal Equations on Unstructured Grids
   [Dec, 2016 - June 2017]
