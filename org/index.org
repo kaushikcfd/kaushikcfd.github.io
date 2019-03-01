@@ -22,7 +22,6 @@ To know more about me please visit --
 + [[file:talks.html][Talks]]
 + [[file:extras/resume.pdf][My CV]]
 + [[https://github.com/kaushikcfd/][My GitHub profile]]
-+ [[file:blog.org][Random musings]]  
 
 --------------
 
