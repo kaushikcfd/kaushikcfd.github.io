@@ -1,0 +1,23 @@
+#+TITLE: What if we can predict the time of any computational kernel?
+
+
+I imagine that the time we will have an semi-ideal abstraction for programming a
+heterogeneous set of architectures will be the almost same time we would be able
+to /meaningfully/ predict the time taken by a computational kernel.
+
+
+The reason I think this is because then we would be able to borrow the vast
+knowledge of scheduling the allocation of resources from /Operation Research/
+folks. Then all that would be left for the user would be to give a
+DAG of the computational kernels and the resource allocation strategy would
+figure the data allotment and deciding which kernel should be scheduled on which
+processors. I believe if there is a way to find a /near-optimal/ chess move
+there is an algorithm for /near-optimal/ technique for such diverse resource utilization.
+
+
+So then the abstraction would be in terms of (say) ~OpenCL~ kernels written in a
+way global grid size would be taken as a parameter (which would be fixed by the
+optimizer) and then a DAG of these kernels should suffice. And I can see that
+now you are /screaming/ why do we even need a kernel, why shouldn't the
+"optimizer" figure out that  bit of work division as well. Well, I don't know I am not good
+at writing fiction and cannot imagine something which is that far ahead in time.
