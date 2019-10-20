@@ -3,6 +3,7 @@ import re
 import datetime
 import argparse
 from mako.template import Template
+from bibtexparser.bparser import BibTexParser
 
 
 parser = argparse.ArgumentParser()
@@ -14,7 +15,8 @@ filename = args.fname
 heading = args.heading
 
 with open(filename) as bibtex_file:
-    bib_database = bibtexparser.load(bibtex_file)
+    bib_parser = BibTexParser(ignore_nonstandard_types=False)
+    bib_database = bibtexparser.load(bibtex_file, bib_parser)
 
 
 ieee_str = ""
@@ -36,6 +38,13 @@ for i, entry in enumerate(bib_database.entries):
                             journal=entry['journal'],
                             vol=entry['volume'],
                             pages=entry['pages'],
+                            year=entry['year'])
+    elif entry['ENTRYTYPE'] == 'preprint':
+        ieee_str += ('<ref> {authors}, &ldquo;{title},&rdquo; <em>{journal}</em>, '
+                     '{year}.</ref>\n').format(
+                            authors=author_str,
+                            title=entry['title'],
+                            journal=entry['journal'],
                             year=entry['year'])
     elif entry['ENTRYTYPE'] == 'inproceedings':
         ieee_str += ('<ref> {authors}, &ldquo;{title},&rdquo; ser. <em>{series}</em>'

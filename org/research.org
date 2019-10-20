@@ -3,17 +3,24 @@
 ** Finite Element Assembly on GPUs
   [June, 2018 - Present] /Advised by Prof. Andreas Klöckner/
 
-  We are looking at optimization transformations in Finite Element Assembly for
-  the GPU backend.
+	Evaluation of Finite Element operators result in a diverse set of
+	computational kernels making it a difficult problem to find one optimization
+	strategy that achieves near-peak performance for all the kernels on GPUs.  We
+	are trying to solve this problem by using high level code generation tools that
+	select the optimization strategy based on the loop structure of the
+	kernel.
 
 ** Abstraction for High Performance Code Generation
   [Aug, 2017 - Present] /Advised by Prof. Andreas Klöckner/
 
-  For the integration of [[https://www.firedrakeproject.org/][Firedrake]] with [[https://documen.tician.de/loopy/][Loopy]] we extended Loopy by adding a
-  function interface to it, which supports the kernel calling mechanism. Related
-  to this topic, I have also put together a small package called [[https://kaushikcfd.github.io/numloopy][NumLoopy]] which
-  allows code generation through =NumPy=-like array syntax, while preserving the
-  notion of transformations.
+	Designing a programming abstraction for a high performance system is very
+	critical in determining the performance and maintainability of the final
+	application.  We address these issues primarily by taking design decisions in
+	extending [[https://documen.tician.de/loopy/][Loopy]].Related to this topic, I
+	have also put together a small package called
+	[[https://kaushikcfd.github.io/numloopy][NumLoopy]] which allows code
+	generation through =NumPy=-like array syntax, while preserving the notion of
+	transformations.
 
 ** Solving Eikonal Equations on Unstructured Grids
   [Dec, 2016 - June 2017]

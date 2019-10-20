@@ -4,7 +4,7 @@
 <!-- 2019-10-20 Sun 12:50 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Research</title>
+<title>What if we can predict the time of any computational kernel?</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Kaushik Kulkarni">
 <style type="text/css">
@@ -178,7 +178,6 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="css/style.css"/>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -229,99 +228,33 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 <header>
-<h1 class="title">Research</h1>
-</header><div id="outline-container-org071d3b1" class="outline-2">
-<h2 id="org071d3b1">Finite Element Assembly on GPUs</h2>
-<div class="outline-text-2" id="text-org071d3b1">
-<p>
-[June, 2018 - Present] <i>Advised by Prof. Andreas Klöckner</i>
+<h1 class="title">What if we can predict the time of any computational kernel?</h1>
+</header><p>
+I imagine that the time we will have an semi-ideal abstraction for programming a
+heterogeneous set of architectures will be the almost same time we would be able
+to <i>meaningfully</i> predict the time taken by a computational kernel.
 </p>
 
-<p>
-Evaluation of Finite Element operators result in a diverse set of
-computational kernels making it a difficult problem to find one optimization
-strategy that achieves near-peak performance for all the kernels on GPUs.  We
-are trying to solve this problem by using high level code generation tools that
-select the optimization strategy based on the loop structure of the
-kernel.
-</p>
-</div>
-</div>
-
-<div id="outline-container-org4b51908" class="outline-2">
-<h2 id="org4b51908">Abstraction for High Performance Code Generation</h2>
-<div class="outline-text-2" id="text-org4b51908">
-<p>
-[Aug, 2017 - Present] <i>Advised by Prof. Andreas Klöckner</i>
-</p>
 
 <p>
-Designing a programming abstraction for a high performance system is very
-critical in determining the performance and maintainability of the final
-application.  We address these issues primarily by taking design decisions in
-extending <a href="https://documen.tician.de/loopy/">Loopy</a>.Related to this topic, I
-have also put together a small package called
-<a href="https://kaushikcfd.github.io/numloopy">NumLoopy</a> which allows code
-generation through <code>NumPy</code>-like array syntax, while preserving the notion of
-transformations.
+The reason I think this is because then we would be able to borrow the vast
+knowledge of scheduling the allocation of resources from <i>Operation Research</i>
+folks. Then all that would be left for the user would be to give a
+DAG of the computational kernels and the resource allocation strategy would
+figure the data allotment and deciding which kernel should be scheduled on which
+processors. I believe if there is a way to find a <i>near-optimal</i> chess move
+there is an algorithm for <i>near-optimal</i> technique for such diverse resource utilization.
 </p>
-</div>
-</div>
 
-<div id="outline-container-org42657bb" class="outline-2">
-<h2 id="org42657bb">Solving Eikonal Equations on Unstructured Grids</h2>
-<div class="outline-text-2" id="text-org42657bb">
-<p>
-[Dec, 2016 - June 2017]
-<i>Advised by Prof. S Baskar, IIT Bombay</i>
-</p>
 
 <p>
-Characteristic Fast Marching Method is widely used in solving the
-Eikonal equations, however previous work had been only formulated for
-structured grids. We developed a solver that extended the algorithm
-for unstructured grids as well. Used the solver to solve known
-problems in literature with skew grids so that the activity of the
-solution could be efficiently observed in the region of activity
+So then the abstraction would be in terms of (say) <code>OpenCL</code> kernels written in a
+way global grid size would be taken as a parameter (which would be fixed by the
+optimizer) and then a DAG of these kernels should suffice. And I can see that
+now you are <i>screaming</i> why do we even need a kernel, why shouldn't the
+"optimizer" figure out that  bit of work division as well. Well, I don't know I am not good
+at writing fiction and cannot imagine something which is that far ahead in time.
 </p>
-</div>
-</div>
-
-<div id="outline-container-org19396bf" class="outline-2">
-<h2 id="org19396bf">Discontinuous Galerkin Framework for solving Hyperbolic PDEs</h2>
-<div class="outline-text-2" id="text-org19396bf">
-<p>
-[Dec,2015 - May 2017]
-<i>Advised by Prof. Shiva Gopalakrishnan, IIT Bombay</i>
-</p>
-
-<p>
-We developed a C++ library for solving Hyperbolic Equations through
-Discontinuous Galerkin ("DG") methods on structured grids. Performed a
-series of convergence tests to verify that the framework satisfied
-hp−convergence. Eventually, used the framework to simulate problems in
-Fluid Dynamics like the dam-break problem using high order DG
-elements.
-</p>
-</div>
-</div>
-
-<div id="outline-container-org9aed111" class="outline-2">
-<h2 id="org9aed111">Flow Induced Reconfiguration of Aquatic Vegetation</h2>
-<div class="outline-text-2" id="text-org9aed111">
-<p>
-[Feb, 2015 - Aug, 2016]
-<i>Advised by Prof. Rajneesh Bharadwaj, IIT Bombay</i>
-Corrected the existing models for Fluid Structure Interaction for a
-Flexible plate by including the Skin friction coefficient in the
-computations. Implemented a "Predictor-Corrector" based Finite
-Difference scheme for the computation of coefficient of drag on the
-plate
-</p>
-
-<hr>
-</div>
-</div>
 </div>
 <div id="postamble" class="status">
 <p class="creator">Last Updated 2019-10-20 Sun 12:50.</p>

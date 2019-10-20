@@ -1,4 +1,5 @@
-\documentclass[letterpaper, 12pt]{article}
+\documentclass[letterpaper, 13pt]{article}
+
 \usepackage{geometry}
 \usepackage[bookmarksnumbered,hidelinks]{hyperref}
 \usepackage{soul}
@@ -11,6 +12,12 @@
 \newcommand{\updatenote}[1][\today]{\par\vfill{\scriptsize \textit{Last updated on #1}}}
 \addbibresource{journal.bib} 
 \addbibresource{conference.bib}
+
+\defbibfilter{papers}{
+  type=article or
+  type=preprint  
+}
+
 
 % -------------------------------------------------------------
 % TODO:
@@ -59,11 +66,10 @@
 \begin{tabular}{p{0.25\textwidth} p{0.67\textwidth}}
 Aug '17 --  \textit{Present}  & Ph.D. student in Computer Science \\
                               & \textit{University of Illinois at Urbana-Champaign, Urbana, IL} \\
-                              & \textit{Adviser: Prof. Andreas Kl\"{o}ckner} \\
-                              & \\
+                              & \textit{Adviser: Prof. Andreas Kl\"{o}ckner}\vspace{1ex}\\
 Aug '13 -- May '17            & Bachelor of Technology in Mechanical Engineering \\
                               & \textit{Indian Institute of Technology, Bombay} \\
-                              & \textit{Adviser: Prof. Shiva Gopalakrishnan}\\
+                              & \textit{Adviser: Prof. Shiva Gopalakrishnan}
 \end{tabular}
 
 % }}}
@@ -75,29 +81,26 @@ Aug '13 -- May '17            & Bachelor of Technology in Mechanical Engineering
 \rule{\textwidth}{0.1ex}\\
 \vspace{1ex}\\
 \begin{tabular}{p{0.25\textwidth} p{0.69\textwidth}}
-Dec '18 -- \textit{Present} &   Graduate Research Assistant \\
+May '19 -- Aug '19          &   Givens Associate\\
+                            &   \textit{\small Argonne National Laboratory, Illinois}\\
+                            & {\small Improved the implementation of Nonlinear optimization algorithms on multi-core systems.}\vspace{1ex}\\
+Aug '17 -- \textit{Present} &   Graduate Research/Teaching Assistant\\
                             &   \textit{\small Computer Science Dept., UIUC}\vspace{1ex}\\
-Aug '18 -- Dec '18          &   Teaching Assistant for Numerical Analysis\\
-                            &   \textit{\small Computer Science Dept., UIUC}\vspace{1ex}\\ 
-Dec '17 -- Aug '18          &   Graduate Research Assistant \\
-                            &   \textit{\small Computer Science Dept., UIUC}\vspace{1ex}\\
-Aug '17 -- Dec '17          &   Teaching Assistant for Numerical Methods\\
-                            &   \textit{\small Computer Science Dept., UIUC}\vspace{1ex}\\
-Jan '17 -- May '17          &   Teaching Assistant for Introduction to Numerical Analysis\\
+Jan '16 -- May '17          &   Teaching Assistant for Introduction to Numerical Analysis\\
                             &   \textit{\small Mathematics Dept., IITB}\vspace{1ex}\\
 May '16 -- July '16         &   Software Engineering Intern\\
                             &   \textit{\small Morgan Stanley Strats and Modelling, Mumbai}\\
+                            & Developed internal tools to aid cash flow visualizations for traders.
 \end{tabular}
 
 % }}}
 
 % {{{ Publications and conferences
 
+
 \nocite{*}
-\printbibliography[title={\Large\textsc{Publications}\vspace*{-2ex}\\\rule{\textwidth}{0.1ex}},
-type=article, resetnumbers=true]
-\printbibliography[title={\Large\textsc{Talks}\vspace*{-2ex}\\\rule{\textwidth}{0.1ex}},
-type=inproceedings, resetnumbers=true]
+\printbibliography[title={\Large\textsc{Publications}\vspace*{-2ex}\\\rule{\textwidth}{0.1ex}},filter=papers]
+\printbibliography[title={\Large\textsc{Talks}\vspace*{-2ex}\\\rule{\textwidth}{0.1ex}},type=inproceedings, resetnumbers=true]
 
 % }}}
 
@@ -120,27 +123,19 @@ type=inproceedings, resetnumbers=true]
 
 % {{{ Research
 
-\pagebreak
-
 \section*{\Large\textsc{Research}}
 \vspace{-4ex}
 \rule{\textwidth}{0.1ex}
 
-
 \subsection*{Finite Element Assembly on GPUs}
 \vspace{-1ex}
 \small \textit{Advised by Prof. Andreas Kl\"{o}ckner, UIUC}\\
-We are looking at optimization transformations in Finite
-Element Assembly for the GPU backend.
+Evaluation of Finite Element operators result in a diverse set of computational kernels making it a difficult problem to find one optimization strategy that achieves near-peak performance for all the kernels on GPUs. We are trying to solve this problem by using high level code generation tools that select the optimization strategy based on the loop structure of the kernel.
 
 \subsection*{Abstractions for High Performance Computing}
 \vspace{-1ex}
 \small \textit{Advised by Prof. Andreas Kl\"{o}ckner, UIUC}\\
-For the integration of
-\texttt{Firedrake}\footnote{\texttt{\url{https://www.firedrakeproject.org/}}
-} with \texttt{Loopy}\footnote{\texttt{\url{https://documen.tician.de/loopy/}}
-} we extended \texttt{Loopy} by adding a function interface to it, which
-supports the kernel calling mechanism within the package.
+Designing a programming abstraction for a high performance system is very critical in determining the performance and maintainability of the final application. We address these issues primarily by taking design decisions in extending \texttt{Loopy}\footnote{\texttt{\url{https://documen.tician.de/loopy/}}}.
 
 \subsection*{Solving Eikonal Equations on Unstructured Grids}
 \vspace{-1ex}
