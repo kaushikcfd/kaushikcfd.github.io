@@ -47,19 +47,28 @@ for i, entry in enumerate(bib_database.entries):
                             journal=entry['journal'],
                             year=entry['year'])
     elif entry['ENTRYTYPE'] == 'inproceedings':
-        ieee_str += ('<ref> {authors}, &ldquo;{title},&rdquo; ser. <em>{series}</em>'
-                     ', {pub}, {year}.</ref>\n').format(
+        if 'series' in entry:
+            ieee_str += ('<ref> {authors}, &ldquo;{title},&rdquo; ser. '
+                    '<em>{series}</em>, {pub}, {year}.</ref>\n').format(
                             authors=author_str,
                             title=entry['title'],
                             series=entry['series'],
                             pub=entry['publisher'],
                             year=entry['year'])
+        else:
+            ieee_str += ('<ref> {authors}, &ldquo;{title},&rdquo;'
+                    ', {pub}, {year}.</ref>\n').format(
+                            authors=author_str,
+                            title=entry['title'],
+                            pub=entry['publisher'],
+                            year=entry['year'])
     else:
         raise NotImplementedError()
 
-ieee_str = re.sub(
-           r'\\"{o}',
-           r'ö', ieee_str)
+# deal with umlauts
+ieee_str = re.sub(r'\\"{o}', r'ö', ieee_str)
+# {{sometext}} => sometext
+ieee_str = re.sub(r'{{(.*)}}', '\g<1>', ieee_str)
 
 final_str = (r"""
         <!DOCTYPE html>
