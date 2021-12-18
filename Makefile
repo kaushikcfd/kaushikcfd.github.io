@@ -1,6 +1,6 @@
 all: html
 
-html: org/index.org generators
+html: org/* generators/*
 	emacs --batch --load publish-minipage.el --eval '(org-publish "personal-webpage" t)'
 
 generators: publications

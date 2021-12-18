@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-02-27 Thu 16:20 -->
+<!-- 2021-12-18 Sat 10:39 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Research</title>
@@ -38,7 +38,7 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
+    overflow: auto;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -50,7 +50,7 @@
     padding: 3px;
     border: 1px solid black;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
@@ -159,6 +159,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -180,59 +193,95 @@
 </style>
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
 <header>
 <h1 class="title">Research</h1>
-</header><div id="outline-container-org071d3b1" class="outline-2">
-<h2 id="org071d3b1">Finite Element Assembly on GPUs</h2>
-<div class="outline-text-2" id="text-org071d3b1">
+</header><div id="outline-container-orgf275a5d" class="outline-2">
+<h2 id="orgf275a5d">Functional Array Programming Languages</h2>
+<div class="outline-text-2" id="text-orgf275a5d">
+<p>
+[Sept, 2020 - Present] <i>Advised by Prof. Andreas Klöckner</i>
+</p>
+
+<p>
+Array Programming Languages have been an important vehicle for driving
+scientific applications from as early as the <a href="https://en.wikipedia.org/wiki/APL_(programming_language)">1960s</a>. Besides providing a
+close-to-math expressibility, their intermediate representations are closer to
+SIMD architectures making it easier to engineer optimizing compilers targeting
+such hardwares. <a href="https://github.com/inducer/pytato">Pytato</a> provides one such IR that lowers \(n-d\) array programs to
+computation graphs comprising of <i>pure</i>-Array Ops that can be targeted to
+<code>OpenCL</code> / <code>CUDA</code> / <code>JAX</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org375aa5d" class="outline-2">
+<h2 id="org375aa5d">Near-Roofline Discontinuous Galerkin Action Operators</h2>
+<div class="outline-text-2" id="text-org375aa5d">
+<p>
+[Sept, 2020 - Present] <i>Advised by Prof. Andreas Klöckner</i>
+</p>
+
+<p>
+Discontinuous Galerkin operator applications comprise of many fine-grained
+array operations that can push them into the memory-bound regime. With kernel
+and loop fusion we can bump up the workload's Arithmetic Intensity, however,
+performing fusion might also negatively affect the kernel's performance by
+inhibiting device's latency hiding abilities by further introducing dependency
+edges and increasing the working set size of the inner loops. In the <a href="https://github.com/illinois-ceesd/mirgecom">MIRGE</a>
+framework we address such trade-offs for such kernels on GPU systems.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1d7b9d1" class="outline-2">
+<h2 id="org1d7b9d1">Finite Element Assembly on GPUs</h2>
+<div class="outline-text-2" id="text-org1d7b9d1">
 <p>
 [June, 2018 - Present] <i>Advised by Prof. Andreas Klöckner</i>
 </p>
@@ -248,9 +297,9 @@ kernel.
 </div>
 </div>
 
-<div id="outline-container-org4b51908" class="outline-2">
-<h2 id="org4b51908">Abstraction for High Performance Code Generation</h2>
-<div class="outline-text-2" id="text-org4b51908">
+<div id="outline-container-orgede1afe" class="outline-2">
+<h2 id="orgede1afe">Abstraction for High Performance Code Generation</h2>
+<div class="outline-text-2" id="text-orgede1afe">
 <p>
 [Aug, 2017 - Present] <i>Advised by Prof. Andreas Klöckner</i>
 </p>
@@ -259,7 +308,7 @@ kernel.
 Designing a programming abstraction for a high performance system is very
 critical in determining the performance and maintainability of the final
 application.  We address these issues primarily by taking design decisions in
-extending <a href="https://documen.tician.de/loopy/">Loopy</a>.Related to this topic, I
+extending <a href="https://documen.tician.de/loopy/">Loopy</a>. Related to this topic, I
 have also put together a small package called
 <a href="https://kaushikcfd.github.io/numloopy">NumLoopy</a> which allows code
 generation through <code>NumPy</code>-like array syntax, while preserving the notion of
@@ -268,9 +317,9 @@ transformations.
 </div>
 </div>
 
-<div id="outline-container-org42657bb" class="outline-2">
-<h2 id="org42657bb">Solving Eikonal Equations on Unstructured Grids</h2>
-<div class="outline-text-2" id="text-org42657bb">
+<div id="outline-container-org45dab69" class="outline-2">
+<h2 id="org45dab69">Solving Eikonal Equations on Unstructured Grids</h2>
+<div class="outline-text-2" id="text-org45dab69">
 <p>
 [Dec, 2016 - June 2017]
 <i>Advised by Prof. S Baskar, IIT Bombay</i>
@@ -287,9 +336,9 @@ solution could be efficiently observed in the region of activity
 </div>
 </div>
 
-<div id="outline-container-org19396bf" class="outline-2">
-<h2 id="org19396bf">Discontinuous Galerkin Framework for solving Hyperbolic PDEs</h2>
-<div class="outline-text-2" id="text-org19396bf">
+<div id="outline-container-org81dd45b" class="outline-2">
+<h2 id="org81dd45b">Discontinuous Galerkin Framework for solving Hyperbolic PDEs</h2>
+<div class="outline-text-2" id="text-org81dd45b">
 <p>
 [Dec,2015 - May 2017]
 <i>Advised by Prof. Shiva Gopalakrishnan, IIT Bombay</i>
@@ -306,9 +355,9 @@ elements.
 </div>
 </div>
 
-<div id="outline-container-org9aed111" class="outline-2">
-<h2 id="org9aed111">Flow Induced Reconfiguration of Aquatic Vegetation</h2>
-<div class="outline-text-2" id="text-org9aed111">
+<div id="outline-container-org58909c6" class="outline-2">
+<h2 id="org58909c6">Flow Induced Reconfiguration of Aquatic Vegetation</h2>
+<div class="outline-text-2" id="text-org58909c6">
 <p>
 [Feb, 2015 - Aug, 2016]
 <i>Advised by Prof. Rajneesh Bharadwaj, IIT Bombay</i>
@@ -324,7 +373,7 @@ plate
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="creator">Last Updated 2020-02-27 Thu 16:20.</p>
+<p class="creator">Last Updated 2021-12-18 Sat 10:39.</p>
 </div>
 </body>
 </html>

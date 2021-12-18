@@ -1,13 +1,10 @@
 #+TITLE: Kaushik Kulkarni
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
-I am a third year PhD student at University of Illinois at
-Urbana-Champaign, where I am a part of the
-[[http://scicomp.cs.illinois.edu/][Scientific Computing group]] in the
-Computer Science Department. I am advised by
-[[https://andreask.cs.illinois.edu/][Prof. Andreas Klöckner]] with whom
-I am working in the area of /Transformation based Code Generation/ in
-applications motivated by Finite element methods.
+I am a PhD student at University of Illinois at Urbana-Champaign where I am a
+part of the [[http://scicomp.cs.illinois.edu/][Scientific Computing group]] in the Computer Science Department. I am
+working with [[https://andreask.cs.illinois.edu/][Prof. Andreas Klöckner]] on /Domain Specific Compilers/ for Numerical
+Methods for PDEs.
 
 Before starting out as a PhD Student, I was an undergraduate student at
 Indian Institute of Technology at Bombay, where I worked on topics
