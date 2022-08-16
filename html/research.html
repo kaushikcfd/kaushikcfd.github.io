@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2021-12-18 Sat 10:39 -->
+<!-- 2022-11-10 Thu 13:06 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Research</title>
@@ -241,21 +241,41 @@
 <div id="content">
 <header>
 <h1 class="title">Research</h1>
-</header><div id="outline-container-orgf275a5d" class="outline-2">
-<h2 id="orgf275a5d">Functional Array Programming Languages</h2>
-<div class="outline-text-2" id="text-orgf275a5d">
+</header><div id="outline-container-org8b6b250" class="outline-2">
+<h2 id="org8b6b250">Optimizing Einstein-Summation Subprograms</h2>
+<div class="outline-text-2" id="text-org8b6b250">
+<p>
+[Jan, 2022 - Present] <i>Advised by Prof. Andreas Klöckner</i>
+</p>
+
+<p>
+Einstein-summations provide a simple notation to express a wide-range of
+Linear-Algebra primitives. Achieving roofline FlOp-throughput for these
+operations still remains challenging. We employ a combination of techniques
+from auto-tuning to pattern-matching to generate efficient <code>OpenCL</code> code for
+computational kernels containing expressions that have <code>einsum</code>-like memory
+access patterns.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf4d953d" class="outline-2">
+<h2 id="orgf4d953d">Array Programming Languages and Intermediate Representations</h2>
+<div class="outline-text-2" id="text-orgf4d953d">
 <p>
 [Sept, 2020 - Present] <i>Advised by Prof. Andreas Klöckner</i>
 </p>
 
 <p>
 Array Programming Languages have been an important vehicle for driving
-scientific applications from as early as the <a href="https://en.wikipedia.org/wiki/APL_(programming_language)">1960s</a>. Besides providing a
-close-to-math expressibility, their intermediate representations are closer to
-SIMD architectures making it easier to engineer optimizing compilers targeting
-such hardwares. <a href="https://github.com/inducer/pytato">Pytato</a> provides one such IR that lowers \(n-d\) array programs to
-computation graphs comprising of <i>pure</i>-Array Ops that can be targeted to
-<code>OpenCL</code> / <code>CUDA</code> / <code>JAX</code>.
+scientific applications from as early as the
+<a href="https://en.wikipedia.org/wiki/APL_(programming_language)">1960s</a>. Besides
+providing a close-to-math expressibility, their intermediate representations
+are closer to SIMD architectures making it easier to engineer optimizing
+compilers targeting such hardwares.
+<a href="https://github.com/inducer/pytato">Pytato</a> provides one such IR that
+lowers \(n-d\) array programs to computation graphs comprising of <i>pure</i>-Array
+Ops that can be targeted to <code>OpenCL</code> / <code>CUDA</code> / <code>JAX</code>.
 </p>
 </div>
 </div>
@@ -283,36 +303,34 @@ framework we address such trade-offs for such kernels on GPU systems.
 <h2 id="org1d7b9d1">Finite Element Assembly on GPUs</h2>
 <div class="outline-text-2" id="text-org1d7b9d1">
 <p>
-[June, 2018 - Present] <i>Advised by Prof. Andreas Klöckner</i>
+[June, 2018 - Jan, 2021] <i>Advised by Prof. Andreas Klöckner</i>
 </p>
 
 <p>
 Evaluation of Finite Element operators result in a diverse set of
 computational kernels making it a difficult problem to find one optimization
 strategy that achieves near-peak performance for all the kernels on GPUs.  We
-are trying to solve this problem by using high level code generation tools that
-select the optimization strategy based on the loop structure of the
-kernel.
+solve this problem by using high level code generation tools that select the
+optimization strategy based on the loop structure of the kernel.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgede1afe" class="outline-2">
-<h2 id="orgede1afe">Abstraction for High Performance Code Generation</h2>
-<div class="outline-text-2" id="text-orgede1afe">
+<div id="outline-container-orgd85dbfe" class="outline-2">
+<h2 id="orgd85dbfe">Abstractions for High Performance Code Generation</h2>
+<div class="outline-text-2" id="text-orgd85dbfe">
 <p>
 [Aug, 2017 - Present] <i>Advised by Prof. Andreas Klöckner</i>
 </p>
 
 <p>
-Designing a programming abstraction for a high performance system is very
-critical in determining the performance and maintainability of the final
-application.  We address these issues primarily by taking design decisions in
-extending <a href="https://documen.tician.de/loopy/">Loopy</a>. Related to this topic, I
-have also put together a small package called
-<a href="https://kaushikcfd.github.io/numloopy">NumLoopy</a> which allows code
-generation through <code>NumPy</code>-like array syntax, while preserving the notion of
-transformations.
+      Designing a programming abstraction for a high performance system is very
+      critical in determining the performance and maintainability of the final
+      application. We address these issues primarily by extending <a href="https://documen.tician.de/loopy/">Loopy Intermediate
+      Representation</a>, which is a high-level IR targeted for user-specified kernel
+transformations. The main question we intend to answer here is &#x2013; "*What is the
+      minimal set of transformation primitives that can transform any
+      scientific-computing kernel to peak its performance?*"
 </p>
 </div>
 </div>
@@ -373,7 +391,7 @@ plate
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="creator">Last Updated 2021-12-18 Sat 10:39.</p>
+<p class="creator">Last Updated 2022-11-10 Thu 13:06.</p>
 </div>
 </body>
 </html>

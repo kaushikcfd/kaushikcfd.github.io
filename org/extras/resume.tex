@@ -41,17 +41,15 @@
 
 \begin{center}
     \LARGE
-    \textsc{\textbf{
-    Kaushik G Kulkarni}}\\
+    \textsc{\textbf{Kaushik G Kulkarni}}\\
     \vspace{1ex}
     \normalsize
     \begin{tabular}{p{0.1\textwidth}p{8ex} p{0.4\textwidth}}
         & Address:    & 201N Goodwin Ave.,\\
         &             & Urbana, IL 61801,\\
         &             & USA\\
-        & Email:      &\href{mailto:kgk2@illinois.edu}{\texttt{kgk2@illinois.edu}}\\
+        & Email:      &\href{mailto:kgk2@illinois.edu}{kgk2@illinois.edu}\\
         & Web:        & \texttt{\small \url{https://kaushikcfd.github.io}} \\
-        & Phone:      &\texttt{(+1)-217-6488653}
     \end{tabular}
 \end{center}
 
@@ -81,11 +79,14 @@ Aug '13 -- May '17            & Bachelor of Technology in Mechanical Engineering
 \rule{\textwidth}{0.1ex}\\
 \vspace{1ex}\\
 \begin{tabular}{p{0.25\textwidth} p{0.69\textwidth}}
+Aug '20 -- \textit{Present} &   Research Assistant\\
+                            &   \textit{\small National Center for
+                            Supercomputing Applications, UIUC}\vspace{1ex}\\
+Aug '17 -- Aug' 20          &   Graduate Research/Teaching Assistant\\
+                            &   \textit{\small Computer Science Dept., UIUC}\vspace{1ex}\\
 May '19 -- Aug '19          &   Givens Associate\\
                             &   \textit{\small Argonne National Laboratory, Illinois}\\
                             & {\small Improved the implementation of Nonlinear optimization algorithms on multi-core systems.}\vspace{1ex}\\
-Aug '17 -- \textit{Present} &   Graduate Research/Teaching Assistant\\
-                            &   \textit{\small Computer Science Dept., UIUC}\vspace{1ex}\\
 Jan '16 -- May '17          &   Teaching Assistant for Introduction to Numerical Analysis\\
                             &   \textit{\small Mathematics Dept., IITB}\vspace{1ex}\\
 May '16 -- July '16         &   Software Engineering Intern\\
@@ -111,12 +112,18 @@ May '16 -- July '16         &   Software Engineering Intern\\
 \rule{\textwidth}{0.1ex}
 \vspace{1ex}\\
 \begin{tabular}{p{0.25\textwidth} p{0.67\textwidth}}
-2019    &   Travel Award for SIAM Conference on Computational Science and Engineering(Spokane, WA) \vspace{1ex}\\
-2016    &   Undergraduate Research Award(URA01) by Indian Institute of Technology, Bombay \vspace{1ex}\\
-2013    &   All India Rank of \textit{341} (top 0.01\%) in the Joint Entrance Examination - Mains out of 1.5 million students \vspace{1ex} \\
-2013    &   All India Rank of \textit{419} (top 0.3\%)in the Joint Entrance Examination - Advanced out of 0.15 million students\vspace{1ex} \\
-2013    &   \textit{Kishore Vaigyanik Protsahan Yojana} Fellowship Award\vspace{1ex} \\
-2013    &   Certificate of Merit for being among the State Top 1\% in National Standard examination in Physics and Chemistry \\
+  2022    &   Graduate College Presentation Award to present at SIAM Conference
+    on Parallel Processing for Scientific Computing \vspace{1ex}\\
+  2021    &   SIAM Travel Award for Conference on Computational Science and
+    Engineering \vspace{1ex}\\
+  2019    &   SIAM Travel Award for Conference on Computational Science and
+    Engineering (Spokane, WA) \vspace{1ex}\\
+  2016    &   Undergraduate Research Award (URA01) by Indian Institute of
+    Technology, Bombay \vspace{1ex}\\
+  2013    &   \textit{Kishore Vaigyanik Protsahan Yojana} Fellowship
+    Award\vspace{1ex} \\
+  2013    &   Certificate of Merit for being among the State Top 1\% in National
+    Standard examination in Physics and Chemistry \\
 \end{tabular} 
 
 % }}}
@@ -124,24 +131,56 @@ May '16 -- July '16         &   Software Engineering Intern\\
 % {{{ Research
 
 \section*{\Large\textsc{Research}}
+
 \vspace{-4ex}
 \rule{\textwidth}{0.1ex}
 
+\subsection*{Optimizing Einstein-Summation Subprograms}
+\vspace{-1ex}
+\small \textit{Advised by Prof.~Andreas Kl\"{o}ckner, UIUC}\\
+Einstein-summations provide a simple notation to express a wide-range of
+Linear-Algebra primitives. Achieving roofline FlOp-throughput for these
+operations still remains challenging. We employ a combination of techniques
+from auto-tuning to pattern-matching to generate efficient \texttt{OpenCL} code for
+computational kernels containing expressions that have \texttt{einsum}-like memory
+access patterns.
+
+\subsection*{Array Programming Languages and Intermediate Representations}
+\vspace{-1ex}
+\small \textit{Advised by Prof.~Andreas Kl\"{o}ckner, UIUC}\\
+Array Programming Languages have been an important vehicle for driving
+scientific applications from as early as the 1960s. Besides
+providing a close-to-math expressibility, their intermediate representations
+are closer to SIMD architectures making it easier to engineer optimizing
+compilers targeting such hardwares.
+\textsc{Pytato} provides one such IR that
+lowers $n-d$ array programs to computation graphs comprising of \textit{pure}-Array
+Ops that can be targeted to \texttt{OpenCL} / \texttt{CUDA} / \texttt{JAX}.
+
+\subsection*{Near-Roofline Discontinuous Galerkin Action Operators}
+\vspace{-1ex}
+\small \textit{Advised by Prof.~Andreas Kl\"{o}ckner, UIUC}\\
+Discontinuous Galerkin operator applications comprise of many fine-grained
+array operations that can push them into the memory-bound regime. With kernel
+and loop fusion we can bump up the workload's Arithmetic Intensity, however,
+performing fusion might also negatively affect the kernel's performance by
+inhibiting device's latency hiding abilities by further introducing dependency
+edges and increasing the working set size of the inner loops. In the \textsc{MIRGE-Com}
+framework we address such trade-offs for GPU systems.
+
 \subsection*{Finite Element Assembly on GPUs}
 \vspace{-1ex}
-\small \textit{Advised by Prof. Andreas Kl\"{o}ckner, UIUC}\\
-Evaluation of Finite Element operators result in a diverse set of computational kernels making it a difficult problem to find one optimization strategy that achieves near-peak performance for all the kernels on GPUs.
-We are trying to solve this problem by using high level code generation tools that select the optimization strategy based on the loop structure of the kernel.
+\small \textit{Advised by Prof.~Andreas Kl\"{o}ckner, UIUC}\\
+Evaluation of Finite Element operators result in a diverse set of
+computational kernels making it a difficult problem to find one optimization
+strategy that achieves near-peak performance for all the kernels on GPUs.  We
+solve this problem by using high level code generation tools that select the
+optimization strategy based on the loop structure of the kernel.
 
-\subsection*{Abstractions for High Performance Computing}
-\vspace{-1ex}
-\small \textit{Advised by Prof. Andreas Kl\"{o}ckner, UIUC}\\
-Designing programming abstraction for a high performance system is very critical in determining the performance and maintainability of the final application.
-We address these issues primarily by taking design decisions in extending \texttt{Loopy}\footnote{\texttt{\url{https://documen.tician.de/loopy/}}}.
 
 \subsection*{Solving Eikonal Equations on Unstructured Grids}
 \vspace{-1ex}
-\small \textit{Advised by Prof. S Baskar, IIT Bombay}\\
+\small \textit{Advised by Prof.~S Baskar, IIT Bombay}\\
 Characteristic Fast Marching Method is widely used in solving the Eikonal
 equations, however previous work had been only formulated for structured
 grids. We developed a solver that extended the algorithm for
@@ -153,22 +192,28 @@ Link: \texttt{https://github.com/kaushikcfd/eikonal-unstructured}
 
 \subsection*{Discontinuous Galerkin Framework for Hyperbolic PDEs}
 \vspace{-1ex}
-\small \textit{Advised by Prof. Shiva Gopalakrishnan, IIT Bombay}\\
-We developed a \texttt{C++} library for solving Hyperbolic Equations through Discontinuous Galerkin (``DG'') methods on structured grids.  Performed a series of convergence tests to verify that the framework satisfied $hp-$convergence.
-Eventually, used the framework to simulate problems in Fluid Dynamics like the dam-break problem using high order DG elements.\\
+\small \textit{Advised by Prof.~Shiva Gopalakrishnan, IIT Bombay}\\
+We developed a \texttt{C++} library for solving Hyperbolic Equations through
+Discontinuous Galerkin (``DG'') methods on structured grids.  Performed a
+series of convergence tests to verify that the framework satisfied
+$hp-$convergence.
+Eventually, used the framework to simulate problems in Fluid Dynamics like the
+dam-break problem using high order DG elements.\\
 Link: \texttt{https://github.com/kaushikcfd/Discontinuous-Galerkin}
 
 
 \subsection*{Flow Induced Reconfiguration of Aquatic Vegetation}
 \vspace{-1ex}
-\small \textit{Advised by Prof. Rajneesh Bharadwaj, IIT Bombay}\\
-Corrected the existing models for Fluid Structure Interaction for a Flexible plate by including the Skin friction coefficient in the computations.
-Implemented a "\textit{Predictor-Corrector}" based Finite Difference scheme for the computation of coefficient of drag on the plate.\\
+\small \textit{Advised by Prof.~Rajneesh Bharadwaj, IIT Bombay}\\
+Corrected the existing models for Fluid Structure Interaction for a Flexible
+plate by including the Skin friction coefficient in the computations.
+Implemented a ``\textit{Predictor-Corrector}'' based Finite Difference scheme
+for the computation of coefficient of drag on the plate.\\
 Link: \texttt{https://arxiv.org/abs/1712.00441}
 
 % }}}
 
-\updatenote
+\updatenote{}
 \end{document}
 
 % vim:foldmethod=marker

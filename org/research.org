@@ -1,15 +1,27 @@
 #+TITLE: Research
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css"/>
-** Functional Array Programming Languages
+** Optimizing Einstein-Summation Subprograms
+  [Jan, 2022 - Present] /Advised by Prof. Andreas Klöckner/
+
+  Einstein-summations provide a simple notation to express a wide-range of
+  Linear-Algebra primitives. Achieving roofline FlOp-throughput for these
+  operations still remains challenging. We employ a combination of techniques
+  from auto-tuning to pattern-matching to generate efficient ~OpenCL~ code for
+  computational kernels containing expressions that have ~einsum~-like memory
+  access patterns.
+
+** Array Programming Languages and Intermediate Representations
   [Sept, 2020 - Present] /Advised by Prof. Andreas Klöckner/
 
   Array Programming Languages have been an important vehicle for driving
-  scientific applications from as early as the [[https://en.wikipedia.org/wiki/APL_(programming_language)][1960s]]. Besides providing a
-  close-to-math expressibility, their intermediate representations are closer to
-  SIMD architectures making it easier to engineer optimizing compilers targeting
-  such hardwares. [[https://github.com/inducer/pytato][Pytato]] provides one such IR that lowers $n-d$ array programs to
-  computation graphs comprising of /pure/-Array Ops that can be targeted to
-  ~OpenCL~ / ~CUDA~ / ~JAX~.
+  scientific applications from as early as the
+  [[https://en.wikipedia.org/wiki/APL_(programming_language)][1960s]]. Besides
+  providing a close-to-math expressibility, their intermediate representations
+  are closer to SIMD architectures making it easier to engineer optimizing
+  compilers targeting such hardwares.
+  [[https://github.com/inducer/pytato][Pytato]] provides one such IR that
+  lowers $n-d$ array programs to computation graphs comprising of /pure/-Array
+  Ops that can be targeted to ~OpenCL~ / ~CUDA~ / ~JAX~.
   
 ** Near-Roofline Discontinuous Galerkin Action Operators
   [Sept, 2020 - Present] /Advised by Prof. Andreas Klöckner/
@@ -23,26 +35,24 @@
   framework we address such trade-offs for such kernels on GPU systems.
   
 ** Finite Element Assembly on GPUs
-  [June, 2018 - Present] /Advised by Prof. Andreas Klöckner/
+  [June, 2018 - Jan, 2021] /Advised by Prof. Andreas Klöckner/
 
-	Evaluation of Finite Element operators result in a diverse set of
-	computational kernels making it a difficult problem to find one optimization
-	strategy that achieves near-peak performance for all the kernels on GPUs.  We
-	are trying to solve this problem by using high level code generation tools that
-	select the optimization strategy based on the loop structure of the
-	kernel.
+  Evaluation of Finite Element operators result in a diverse set of
+  computational kernels making it a difficult problem to find one optimization
+  strategy that achieves near-peak performance for all the kernels on GPUs.  We
+  solve this problem by using high level code generation tools that select the
+  optimization strategy based on the loop structure of the kernel.
 
-** Abstraction for High Performance Code Generation
+** Abstractions for High Performance Code Generation
   [Aug, 2017 - Present] /Advised by Prof. Andreas Klöckner/
 
 	Designing a programming abstraction for a high performance system is very
 	critical in determining the performance and maintainability of the final
-	application.  We address these issues primarily by taking design decisions in
-	extending [[https://documen.tician.de/loopy/][Loopy]]. Related to this topic, I
-	have also put together a small package called
-	[[https://kaushikcfd.github.io/numloopy][NumLoopy]] which allows code
-	generation through =NumPy=-like array syntax, while preserving the notion of
-	transformations.
+	application. We address these issues primarily by extending [[https://documen.tician.de/loopy/][Loopy Intermediate
+	Representation]], which is a high-level IR targeted for user-specified kernel
+  transformations. The main question we intend to answer here is -- "*What is the
+	minimal set of transformation primitives that can transform any
+	scientific-computing kernel to peak its performance?*"
 
 ** Solving Eikonal Equations on Unstructured Grids
   [Dec, 2016 - June 2017]

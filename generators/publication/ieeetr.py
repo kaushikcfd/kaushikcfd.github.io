@@ -29,12 +29,13 @@ for i, entry in enumerate(bib_database.entries):
         author_str += "{0}. {1}, ".format(first_name[0], last_name)
 
     author_str = author_str[:-2]
+    title = re.sub("[{}]", "", entry["title"])
 
     if entry['ENTRYTYPE'] == 'article':
         ieee_str += ('<ref> {authors}, &ldquo;{title},&rdquo; <em>{journal}</em>, '
                      'vol. {vol}, pp.{pages}, {year}.</ref>\n').format(
                             authors=author_str,
-                            title=entry['title'],
+                            title=title,
                             journal=entry['journal'],
                             vol=entry['volume'],
                             pages=entry['pages'],
@@ -43,7 +44,7 @@ for i, entry in enumerate(bib_database.entries):
         ieee_str += ('<ref> {authors}, &ldquo;{title},&rdquo; <em>{journal}</em>, '
                      '{year}.</ref>\n').format(
                             authors=author_str,
-                            title=entry['title'],
+                            title=title,
                             journal=entry['journal'],
                             year=entry['year'])
     elif entry['ENTRYTYPE'] == 'inproceedings':
@@ -51,7 +52,7 @@ for i, entry in enumerate(bib_database.entries):
             ieee_str += ('<ref> {authors}, &ldquo;{title},&rdquo; ser. '
                     '<em>{series}</em>, {pub}, {year}.</ref>\n').format(
                             authors=author_str,
-                            title=entry['title'],
+                            title=title,
                             series=entry['series'],
                             pub=entry['publisher'],
                             year=entry['year'])
@@ -59,7 +60,7 @@ for i, entry in enumerate(bib_database.entries):
             ieee_str += ('<ref> {authors}, &ldquo;{title},&rdquo;'
                     ', {pub}, {year}.</ref>\n').format(
                             authors=author_str,
-                            title=entry['title'],
+                            title=title,
                             pub=entry['publisher'],
                             year=entry['year'])
     else:
