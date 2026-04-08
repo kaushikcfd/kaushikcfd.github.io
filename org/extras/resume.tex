@@ -6,33 +6,22 @@
 \usepackage[T1]{fontenc}
 \usepackage{lipsum}
 \usepackage{tabularx}
-\usepackage[style=ieee, defernumbers=true]{biblatex}
+\usepackage[style=ieee, defernumbers=true, maxbibnames=9]{biblatex}
 \usepackage{enumitem}
 \pagestyle{empty}
 \newcommand{\updatenote}[1][\today]{\par\vfill{\scriptsize \textit{Last updated on #1}}}
 \addbibresource{journal.bib} 
 \addbibresource{conference.bib}
+% Bold the highlighted author
+\renewcommand*{\mkbibnamefamily}[1]{%
+  \ifitemannotation{highlight}{\textbf{#1}}{#1}}
+\renewcommand*{\mkbibnamegiven}[1]{%
+  \ifitemannotation{highlight}{\textbf{#1}}{#1}}
 
 \defbibfilter{papers}{
   type=article or
   type=preprint  
 }
-
-
-% -------------------------------------------------------------
-% TODO:
-% [ ] Maintain a org-file instead of tex
-% [x] Proof read the research paragraphs
-% [x] Adding code links to the description
-% [x] Change the first section.
-% [x] Change the spacing of the empty line in tables
-% [x] Reduce the spacing between the advisor and title and ~~increase between the description on advisor.~~
-% [x] Change the way you write about research.
-% [x] Remove enumerates.
-% [x] Add the current research.
-% [x] Complete the Morgan Stanley discussion section
-% ---------------------------------------------------------------
-
 
 
 \begin{document}
@@ -45,9 +34,6 @@
     \vspace{1ex}
     \normalsize
     \begin{tabular}{p{0.1\textwidth}p{8ex} p{0.4\textwidth}}
-        & Address:    & 201N Goodwin Ave.,\\
-        &             & Urbana, IL 61801,\\
-        &             & USA\\
         & Email:      &\href{mailto:kgk2@illinois.edu}{kgk2@illinois.edu}\\
         & Web:        & \texttt{\small \url{https://kaushikcfd.github.io}} \\
     \end{tabular}
@@ -62,12 +48,13 @@
 \rule{\textwidth}{0.1ex}\\
 \vspace{1ex}\\
 \begin{tabular}{p{0.25\textwidth} p{0.67\textwidth}}
-Aug '17 --  \textit{Present}  & Ph.D. student in Computer Science \\
-                              & \textit{University of Illinois at Urbana-Champaign, Urbana, IL} \\
-                              & \textit{Adviser: Prof. Andreas Kl\"{o}ckner}\vspace{1ex}\\
-Aug '13 -- May '17            & Bachelor of Technology in Mechanical Engineering \\
-                              & \textit{Indian Institute of Technology, Bombay} \\
-                              & \textit{Adviser: Prof. Shiva Gopalakrishnan}
+Aug '17 -- July '23  & Ph.D. in Computer Science \\
+                     & {\small University of Illinois at Urbana-Champaign, Urbana, IL} \\
+                     & {\small \textit{Domain-Specific Code Transformations for
+                     Computational Science based on the Polyhedral
+                     Model}}\vspace{1ex}\\
+Aug '13 -- May '17   & Bachelor of Technology in Mechanical Engineering \\
+                     & {\small Indian Institute of Technology, Bombay} \\
 \end{tabular}
 
 % }}}
@@ -79,7 +66,10 @@ Aug '13 -- May '17            & Bachelor of Technology in Mechanical Engineering
 \rule{\textwidth}{0.1ex}\\
 \vspace{1ex}\\
 \begin{tabular}{p{0.25\textwidth} p{0.69\textwidth}}
-Aug '20 -- \textit{Present} &   Research Assistant\\
+Aug '23 -- \textit{Present} & Senior Engineer\\
+                            &  \textit{\small Qualcomm Technologies Inc., San Diego, CA.}\\
+                            & Researching programming abstractions for high-throughput machine learning inference on Neural Processing Units.\vspace{1ex} \\
+Aug '20 -- July '23 &       Research Assistant\\
                             &   \textit{\small National Center for
                             Supercomputing Applications, UIUC}\vspace{1ex}\\
 Aug '17 -- Aug' 20          &   Graduate Research/Teaching Assistant\\
@@ -104,6 +94,7 @@ May '16 -- July '16         &   Software Engineering Intern\\
 \printbibliography[title={\Large\textsc{Talks}\vspace*{-2ex}\\\rule{\textwidth}{0.1ex}},type=inproceedings, resetnumbers=true]
 
 % }}}
+\pagebreak
 
 % {{{ Awards and Achievements
 
@@ -112,6 +103,8 @@ May '16 -- July '16         &   Software Engineering Intern\\
 \rule{\textwidth}{0.1ex}
 \vspace{1ex}\\
 \begin{tabular}{p{0.25\textwidth} p{0.67\textwidth}}
+  2023    &   SIAM Travel Award for Conference on Computational Science and
+    Engineering (Amsterdam, NL)\vspace{1ex}\\
   2022    &   Graduate College Presentation Award to present at SIAM Conference
     on Parallel Processing for Scientific Computing \vspace{1ex}\\
   2021    &   SIAM Travel Award for Conference on Computational Science and
@@ -134,86 +127,107 @@ May '16 -- July '16         &   Software Engineering Intern\\
 
 \vspace{-4ex}
 \rule{\textwidth}{0.1ex}
+\begin{description}
+  \item[Optimizing Einstein-Summation Subprograms] Einstein-summations provide a
+    simple notation to express a wide-range of Linear-Algebra primitives.
+    Achieving roofline FLOP-throughput for these operations still remains
+    challenging. We employ a combination of techniques from auto-tuning to
+    pattern-matching to generate efficient OpenCL code for computational
+    kernels containing expressions that have einsum-like memory access
+    patterns.
 
-\subsection*{Optimizing Einstein-Summation Subprograms}
-\vspace{-1ex}
-\small \textit{Advised by Prof.~Andreas Kl\"{o}ckner, UIUC}\\
-Einstein-summations provide a simple notation to express a wide-range of
-Linear-Algebra primitives. Achieving roofline FlOp-throughput for these
-operations still remains challenging. We employ a combination of techniques
-from auto-tuning to pattern-matching to generate efficient \texttt{OpenCL} code for
-computational kernels containing expressions that have \texttt{einsum}-like memory
-access patterns.
+  \item[Array Programming Languages and Intermediate Representations] Array
+    Programming Languages have been an important vehicle for driving scientific
+    applications from as early as the 1960s. Besides providing a close-to-math
+    expressibility, their intermediate representations are closer to SIMD
+    architectures making it easier to engineer optimizing compilers targeting such
+    hardwares.  \textsc{Pytato} provides one such IR that lowers $n-d$ array
+    programs to computation graphs comprising of \textit{pure}-Array Ops that can
+    be targeted to OpenCL / CUDA / JAX.
 
-\subsection*{Array Programming Languages and Intermediate Representations}
-\vspace{-1ex}
-\small \textit{Advised by Prof.~Andreas Kl\"{o}ckner, UIUC}\\
-Array Programming Languages have been an important vehicle for driving
-scientific applications from as early as the 1960s. Besides
-providing a close-to-math expressibility, their intermediate representations
-are closer to SIMD architectures making it easier to engineer optimizing
-compilers targeting such hardwares.
-\textsc{Pytato} provides one such IR that
-lowers $n-d$ array programs to computation graphs comprising of \textit{pure}-Array
-Ops that can be targeted to \texttt{OpenCL} / \texttt{CUDA} / \texttt{JAX}.
+  \item[Near-Roofline Discontinuous Galerkin Action Operators] Discontinuous Galerkin operator
+    applications comprise of many fine-grained array operations that can push
+    them into the memory-bound regime. With kernel and loop fusion we can bump
+    up the workload's Arithmetic Intensity, however, performing fusion might
+    also negatively affect the kernel's performance by inhibiting device's
+    latency hiding abilities by further introducing dependency edges and
+    increasing the working set size of the inner loops. In the
+    \textsc{MIRGE-Com} framework we address such trade-offs for GPU systems.
 
-\subsection*{Near-Roofline Discontinuous Galerkin Action Operators}
-\vspace{-1ex}
-\small \textit{Advised by Prof.~Andreas Kl\"{o}ckner, UIUC}\\
-Discontinuous Galerkin operator applications comprise of many fine-grained
-array operations that can push them into the memory-bound regime. With kernel
-and loop fusion we can bump up the workload's Arithmetic Intensity, however,
-performing fusion might also negatively affect the kernel's performance by
-inhibiting device's latency hiding abilities by further introducing dependency
-edges and increasing the working set size of the inner loops. In the \textsc{MIRGE-Com}
-framework we address such trade-offs for GPU systems.
+  \item[Finite Element Assembly on GPUs] Evaluation of Finite Element operators
+    result in a diverse set of computational kernels making it a difficult problem
+    to find one optimization strategy that achieves near-peak performance for all
+    the kernels on GPUs.  We solve this problem by using high level code
+    generation tools that select the optimization strategy based on the loop
+    structure of the kernel.
+\end{description}
 
-\subsection*{Finite Element Assembly on GPUs}
-\vspace{-1ex}
-\small \textit{Advised by Prof.~Andreas Kl\"{o}ckner, UIUC}\\
-Evaluation of Finite Element operators result in a diverse set of
-computational kernels making it a difficult problem to find one optimization
-strategy that achieves near-peak performance for all the kernels on GPUs.  We
-solve this problem by using high level code generation tools that select the
-optimization strategy based on the loop structure of the kernel.
+% }}}
 
+% {{{ Key Software Contributions
 
-\subsection*{Solving Eikonal Equations on Unstructured Grids}
-\vspace{-1ex}
-\small \textit{Advised by Prof.~S Baskar, IIT Bombay}\\
-Characteristic Fast Marching Method is widely used in solving the Eikonal
-equations, however previous work had been only formulated for structured
-grids. We developed a solver that extended the algorithm for
-unstructured grids as well. Used the solver to solve known problems in
-literature with skew grids so that the activity of the solution could be
-efficiently observed in the region of activity.\\
-Link: \texttt{https://github.com/kaushikcfd/eikonal-unstructured}
+\section*{\Large\textsc{Key Software Contributions}}
 
+\vspace{-4ex}
+\rule{\textwidth}{0.1ex}
+{\scriptsize P = Primary (Maintainer) | S = Significant contributions}
+\vspace{1ex}\\
+\begin{tabular}{p{0.18\textwidth} p{0.74\textwidth}}
+  \textbf{Loopy}$^S$ &
+    An intermediate representation and transformation toolkit for programs with
+    single exit-point loops for targets with SPMD execution models. My work
+    introduced the callables abstraction within the IR that eventually enabled
+    it to interact with the computer algebra systems in projects like Firedrake,
+    MIRGE-Com. Documentation: \url{https://documen.tician.de/loopy/}\vspace{1ex}\\
 
-\subsection*{Discontinuous Galerkin Framework for Hyperbolic PDEs}
-\vspace{-1ex}
-\small \textit{Advised by Prof.~Shiva Gopalakrishnan, IIT Bombay}\\
-We developed a \texttt{C++} library for solving Hyperbolic Equations through
-Discontinuous Galerkin (``DG'') methods on structured grids.  Performed a
-series of convergence tests to verify that the framework satisfied
-$hp-$convergence.
-Eventually, used the framework to simulate problems in Fluid Dynamics like the
-dam-break problem using high order DG elements.\\
-Link: \texttt{https://github.com/kaushikcfd/Discontinuous-Galerkin}
+  \textbf{Pytato}$^P$ &
+    An intermediate representation for $n$-d array operations that supports the
+    pure subset of Numpy operations. The IR can be targeted to Loopy IR,
+    XLA/JAX, etc. Pytato has been used to deploy a production Discontinuous
+    Galerkin solver which is capable of delivering roofline performance while a
+    computational scientist writes Numpy-like code. Documentation:
+    \url{https://documen.tician.de/pytato/}\vspace{1ex}\\
 
+  \textbf{feinsum}$^P$ &
+    Toolkit for managing databases of code-transformations on Batched Einstein
+    Summations. Unlike typical computational primitive libraries that ship
+    optimized computational kernel in source or binary form, feinsum records
+    code- transformations from a trivial schedule, resulting in relative savings
+    from not having to flush the operands to the DRAM. Documentation:
+    \url{https://feinsum.readthedocs.io/}\vspace{1ex}\\
 
-\subsection*{Flow Induced Reconfiguration of Aquatic Vegetation}
-\vspace{-1ex}
-\small \textit{Advised by Prof.~Rajneesh Bharadwaj, IIT Bombay}\\
-Corrected the existing models for Fluid Structure Interaction for a Flexible
-plate by including the Skin friction coefficient in the computations.
-Implemented a ``\textit{Predictor-Corrector}'' based Finite Difference scheme
-for the computation of coefficient of drag on the plate.\\
-Link: \texttt{https://arxiv.org/abs/1712.00441}
+  \textbf{Arraycontext}$^P$ &
+    Provides a subset of Numpy operations that are avaialable to both lazy and
+    eager modes of execution. At runtime, these operations can be retargeted to
+    array implementations, such as Pytato, JAX, PyOpenCL, etc.  Documentation:
+    \url{https://documen.tician.de/arraycontext/}.\vspace{1ex}\\
+
+  \textbf{symoxide}$^P$ &
+  A computer algebra system written purely in Rust. Demonstrated $\sim$5
+  speedup w.r.t. state-of-the-art implementations in Python for expression
+  traversals of production Scientific Computing workloads.  Documentation:
+  \url{https://docs.rs/symoxide}
+    \vspace{1ex}\\
+
+  \textbf{ISL-Rs}$^P$ &
+  Rust bindings for Integer Set Library to access polyhedral analysis
+  primitives, where the implementation is responsible for automatic cleanup of
+  objects as per Rust semantics. Documentation: \url{https://docs.rs/isl-rs}.
+  \vspace{1ex}\\
+
+  \textbf{pybliss}$^P$ &
+  Idiomatic Python bindings for the graph isomorphism toolkit, \textsc{Bliss}.
+  Documentation: \url{https://pybliss.readthedocs.io}.
+  \vspace{1ex}\\
+
+  \textbf{Miscellaneous} &
+    Minor improvements to \textsc{PETSc}, \textsc{PyCUDA}, \textsc{Firedrake}, etc.\\
+\end{tabular}
 
 % }}}
 
 \updatenote{}
+
 \end{document}
 
 % vim:foldmethod=marker
