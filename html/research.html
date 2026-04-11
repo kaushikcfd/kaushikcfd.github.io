@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-11-10 Thu 13:06 -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 2026-04-11 Sat 13:37 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Research</title>
-<meta name="generator" content="Org mode">
-<meta name="author" content="Kaushik Kulkarni">
+<meta name="author" content="Kaushik Kulkarni" />
+<meta name="generator" content="Org Mode" />
 <style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -29,8 +29,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -39,21 +40,21 @@
   pre.src {
     position: relative;
     overflow: auto;
-    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -188,62 +189,49 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
+  .org-svg { }
 </style>
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
 </script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
 
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <header>
 <h1 class="title">Research</h1>
-</header><div id="outline-container-org8b6b250" class="outline-2">
-<h2 id="org8b6b250">Optimizing Einstein-Summation Subprograms</h2>
-<div class="outline-text-2" id="text-org8b6b250">
+</header><div id="outline-container-org30e0c35" class="outline-2">
+<h2 id="org30e0c35">Optimizing Einstein-Summation Subprograms</h2>
+<div class="outline-text-2" id="text-org30e0c35">
 <p>
 [Jan, 2022 - Present] <i>Advised by Prof. Andreas Klöckner</i>
 </p>
@@ -258,10 +246,9 @@ access patterns.
 </p>
 </div>
 </div>
-
-<div id="outline-container-orgf4d953d" class="outline-2">
-<h2 id="orgf4d953d">Array Programming Languages and Intermediate Representations</h2>
-<div class="outline-text-2" id="text-orgf4d953d">
+<div id="outline-container-org35cf6ac" class="outline-2">
+<h2 id="org35cf6ac">Array Programming Languages and Intermediate Representations</h2>
+<div class="outline-text-2" id="text-org35cf6ac">
 <p>
 [Sept, 2020 - Present] <i>Advised by Prof. Andreas Klöckner</i>
 </p>
@@ -279,10 +266,9 @@ Ops that can be targeted to <code>OpenCL</code> / <code>CUDA</code> / <code>JAX<
 </p>
 </div>
 </div>
-
-<div id="outline-container-org375aa5d" class="outline-2">
-<h2 id="org375aa5d">Near-Roofline Discontinuous Galerkin Action Operators</h2>
-<div class="outline-text-2" id="text-org375aa5d">
+<div id="outline-container-orgfa8f1c1" class="outline-2">
+<h2 id="orgfa8f1c1">Near-Roofline Discontinuous Galerkin Action Operators</h2>
+<div class="outline-text-2" id="text-orgfa8f1c1">
 <p>
 [Sept, 2020 - Present] <i>Advised by Prof. Andreas Klöckner</i>
 </p>
@@ -298,10 +284,9 @@ framework we address such trade-offs for such kernels on GPU systems.
 </p>
 </div>
 </div>
-
-<div id="outline-container-org1d7b9d1" class="outline-2">
-<h2 id="org1d7b9d1">Finite Element Assembly on GPUs</h2>
-<div class="outline-text-2" id="text-org1d7b9d1">
+<div id="outline-container-orgf0f783a" class="outline-2">
+<h2 id="orgf0f783a">Finite Element Assembly on GPUs</h2>
+<div class="outline-text-2" id="text-orgf0f783a">
 <p>
 [June, 2018 - Jan, 2021] <i>Advised by Prof. Andreas Klöckner</i>
 </p>
@@ -315,10 +300,9 @@ optimization strategy based on the loop structure of the kernel.
 </p>
 </div>
 </div>
-
-<div id="outline-container-orgd85dbfe" class="outline-2">
-<h2 id="orgd85dbfe">Abstractions for High Performance Code Generation</h2>
-<div class="outline-text-2" id="text-orgd85dbfe">
+<div id="outline-container-org9c203a0" class="outline-2">
+<h2 id="org9c203a0">Abstractions for High Performance Code Generation</h2>
+<div class="outline-text-2" id="text-org9c203a0">
 <p>
 [Aug, 2017 - Present] <i>Advised by Prof. Andreas Klöckner</i>
 </p>
@@ -328,16 +312,15 @@ optimization strategy based on the loop structure of the kernel.
       critical in determining the performance and maintainability of the final
       application. We address these issues primarily by extending <a href="https://documen.tician.de/loopy/">Loopy Intermediate
       Representation</a>, which is a high-level IR targeted for user-specified kernel
-transformations. The main question we intend to answer here is &#x2013; "*What is the
+transformations. The main question we intend to answer here is &#x2013; "<b>What is the
       minimal set of transformation primitives that can transform any
-      scientific-computing kernel to peak its performance?*"
+      scientific-computing kernel to peak its performance?</b>"
 </p>
 </div>
 </div>
-
-<div id="outline-container-org45dab69" class="outline-2">
-<h2 id="org45dab69">Solving Eikonal Equations on Unstructured Grids</h2>
-<div class="outline-text-2" id="text-org45dab69">
+<div id="outline-container-org88eb8f0" class="outline-2">
+<h2 id="org88eb8f0">Solving Eikonal Equations on Unstructured Grids</h2>
+<div class="outline-text-2" id="text-org88eb8f0">
 <p>
 [Dec, 2016 - June 2017]
 <i>Advised by Prof. S Baskar, IIT Bombay</i>
@@ -353,10 +336,9 @@ solution could be efficiently observed in the region of activity
 </p>
 </div>
 </div>
-
-<div id="outline-container-org81dd45b" class="outline-2">
-<h2 id="org81dd45b">Discontinuous Galerkin Framework for solving Hyperbolic PDEs</h2>
-<div class="outline-text-2" id="text-org81dd45b">
+<div id="outline-container-orgd144416" class="outline-2">
+<h2 id="orgd144416">Discontinuous Galerkin Framework for solving Hyperbolic PDEs</h2>
+<div class="outline-text-2" id="text-orgd144416">
 <p>
 [Dec,2015 - May 2017]
 <i>Advised by Prof. Shiva Gopalakrishnan, IIT Bombay</i>
@@ -372,10 +354,9 @@ elements.
 </p>
 </div>
 </div>
-
-<div id="outline-container-org58909c6" class="outline-2">
-<h2 id="org58909c6">Flow Induced Reconfiguration of Aquatic Vegetation</h2>
-<div class="outline-text-2" id="text-org58909c6">
+<div id="outline-container-org7d22cfc" class="outline-2">
+<h2 id="org7d22cfc">Flow Induced Reconfiguration of Aquatic Vegetation</h2>
+<div class="outline-text-2" id="text-org7d22cfc">
 <p>
 [Feb, 2015 - Aug, 2016]
 <i>Advised by Prof. Rajneesh Bharadwaj, IIT Bombay</i>
@@ -391,7 +372,7 @@ plate
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="creator">Last Updated 2022-11-10 Thu 13:06.</p>
+<p class="creator">Last Updated 2026-04-11 Sat 13:37.</p>
 </div>
 </body>
 </html>

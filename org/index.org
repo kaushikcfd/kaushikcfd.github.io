@@ -1,27 +1,24 @@
 #+TITLE: Kaushik Kulkarni
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
-I am a PhD student at University of Illinois at Urbana-Champaign where I am a
-part of the [[http://scicomp.cs.illinois.edu/][Scientific Computing group]] in the Computer Science Department. I am
-working with [[https://andreask.cs.illinois.edu/][Prof. Andreas Klöckner]] on /Domain Specific Compilers/ for Numerical
-Methods for PDEs.
-
-Before starting out as a PhD Student, I was an undergraduate student at
-Indian Institute of Technology at Bombay, where I worked on topics
-related to Computational Fluid Dynamics.
+I work at Qualcomm on SPMD compilers for NPUs. Before that, I was a PhD student
+at the University of Illinois at Urbana-Champaign where I was a part of the
+[[http://scicomp.cs.illinois.edu/][Scientific Computing group]] in the Computer
+Science Department. I worked with [[https://andreask.cs.illinois.edu/][Prof.
+Andreas Klöckner]] on /Domain Specific Compilers/ for Numerical Methods for
+PDEs and Linear Algebra.
 
 --------------
 
-To know more about me please visit --
+To know more about me, please visit --
 
 + [[file:research.org][My research]]
-+ [[file:publications.html][Publications]]
-+ [[file:talks.html][Talks]]
++ [[https://scholar.google.com/citations?user=9FX6RAcAAAAJ][Publications]]
 + [[file:extras/resume.pdf][My CV]]
 + [[https://github.com/kaushikcfd/][My GitHub profile]]
 
 --------------
 
-*Contact:* [[mailto:kgk2@illinois.edu][kgk2@illinois.edu]]
+*Contact:* [[mailto:kaushikcfd@gmail.com][kaushikcfd@gmail.com]]
 
 --------------
